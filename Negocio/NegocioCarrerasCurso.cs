@@ -19,7 +19,7 @@ namespace Negocio
         private List <int> Meses_seleccionados = new List<int>();
         private List <int> Anios_seleccionados = new List<int>();
 
-        string TipoPago_seleccionado = "123";
+        string TipoPago_seleccionado = "";
 
         public NegocioCarrerasCurso() {;}
 
