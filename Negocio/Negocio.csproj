@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="NegocioCarrerasCurso.cs" />
     <Compile Include="NegocioIngresos.cs" />
+    <Compile Include="NegocioSusuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

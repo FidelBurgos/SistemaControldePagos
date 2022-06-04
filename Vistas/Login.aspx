@@ -35,7 +35,7 @@
     <asp:TextBox runat="server" type="password" class="form-control" id="txtPass"/>
   </div>
   
-  <asp:Button runat="server" type="submit" Text="Iniciar Sesión" class="btn" style="background-color:black; color:white; width:100%; margin-top:10px" />
+  <asp:Button runat="server" type="submit" Text="Iniciar Sesión" class="btn" style="background-color:black; color:white; width:100%; margin-top:10px" OnClick="btnIniciarSesion" />
 
     </div>
      
