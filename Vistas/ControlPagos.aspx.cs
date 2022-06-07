@@ -21,9 +21,15 @@ namespace Vistas
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string idusuario = "";
+            if (Session["IdUsuario"] != null)
+            {
+                idusuario=Session["IdUsuario"].ToString();
+            }
+
             if (!IsPostBack)
             {
-                negocioCarrerasCurso.cargarDatosCarrerasCBL(cblCarrera);
+                negocioCarrerasCurso.cargarDatosCarrerasCBL(idusuario,cblCarrera);
                 negocioCarrerasCurso.cargarDatosMesesCBL(cblMes);
                 negocioCarrerasCurso.cargarDatosAñosCBL(cblAnio);
             }
@@ -132,13 +138,23 @@ namespace Vistas
         protected void rblistSeleccionCarrCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
             string busqueda = tbxBusquedaTexto.Text.Trim().ToUpper();
-            negocioCarrerasCurso.cargarDatosCarrerasCBL(cblCarrera, rblistSeleccionCarrCurso.SelectedValue, busqueda);
+            string idusuario = "";
+            if (Session["IdUsuario"] != null)
+            {
+                idusuario = Session["IdUsuario"].ToString();
+            }
+            negocioCarrerasCurso.cargarDatosCarrerasCBL(idusuario,cblCarrera, rblistSeleccionCarrCurso.SelectedValue, busqueda);
         }
 
         protected void tbxBusquedaTexto_TextChanged(object sender, EventArgs e)
         {
             string busqueda = tbxBusquedaTexto.Text.Trim().ToUpper();
-            negocioCarrerasCurso.cargarDatosCarrerasCBL(cblCarrera, rblistSeleccionCarrCurso.SelectedValue, busqueda);
+            string idusuario = "";
+            if (Session["IdUsuario"] != null)
+            {
+                idusuario = Session["IdUsuario"].ToString();
+            }
+            negocioCarrerasCurso.cargarDatosCarrerasCBL(idusuario,cblCarrera, rblistSeleccionCarrCurso.SelectedValue, busqueda);
         }
 
         protected bool verificarCBLMarcado(CheckBoxList cbl)

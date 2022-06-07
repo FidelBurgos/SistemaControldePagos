@@ -23,9 +23,10 @@ namespace Negocio
 
         public NegocioCarrerasCurso() {;}
 
-        public void cargarDatosCarrerasCBL(CheckBoxList checkBoxList, string TipoConsulta = "Todo", string TextoBusqueda = "")
+        public void cargarDatosCarrerasCBL(string idusuario,CheckBoxList checkBoxList, string TipoConsulta = "Todo", string TextoBusqueda = "")
         {
-            checkBoxList.DataSource = dao.listarCarreras(TipoConsulta, TextoBusqueda);
+            
+            checkBoxList.DataSource = dao.listarCarreras(TipoConsulta, TextoBusqueda, idusuario);
             checkBoxList.DataTextField = "cacu_descripcion";
             checkBoxList.DataValueField = "cacu_idcarrcurs";
             checkBoxList.DataBind();

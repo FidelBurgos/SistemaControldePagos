@@ -80,6 +80,7 @@
     <Compile Include="DaoCarrerasCurso.cs" />
     <Compile Include="DaoIngresos.cs" />
     <Compile Include="DaoSusuarios.cs" />
+    <Compile Include="DaoSusuarios_subcuentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

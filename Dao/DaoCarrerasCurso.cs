@@ -15,7 +15,7 @@ namespace Dao
 
         public DaoCarrerasCurso() {; }
 
-        public DataTable listarCarreras(string filtrosTipoCarrCurs, string textoBusqueda)
+        public DataTable listarCarreras(string filtrosTipoCarrCurs, string textoBusqueda, string idusuario)
         {
             DataTable dt = new DataTable();
 
@@ -23,6 +23,7 @@ namespace Dao
 
             if (filtrosTipoCarrCurs == "Todo")
             {
+                /*
                 consulta = "SELECT cacu_idcarrcurs, cacu_descripcion FROM carrerascursos " +
                 "WHERE (cacu_tipocarrcurs = 'CARRERA' OR cacu_tipocarrcurs = 'CURSO'  OR cacu_tipocarrcurs = 'MAESTRIA') " +
                 "AND (cacu_descripcion NOT LIKE '%NO USAR%') ";
@@ -33,7 +34,10 @@ namespace Dao
                 }
 
                 consulta += "ORDER BY cacu_descripcion";
+                */
 
+                /// agrega solo con ID de usuario
+                consulta = "SELECT cacu_idcarrcurs, cacu_descripcion FROM carrerascursos INNER JOIN susuarios_subcuentas ON carrerascursos.cacu_idsubcuen = susuarios_subcuentas.ussu_idsubcuenta WHERE ussu_idusuario = '" + idusuario + "'";
                 dt = accesoDatos.ObtenerTabla("Carreras", consulta);
                 return dt;
             }

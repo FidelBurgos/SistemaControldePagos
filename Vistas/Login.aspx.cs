@@ -19,15 +19,24 @@ namespace Vistas
         protected void btnIniciarSesion(object sender, EventArgs e)
         {
             NegocioSusuarios negusuario = new NegocioSusuarios();
+            NegocioSusuarios_subcuentas negusuariosubcuenta = new NegocioSusuarios_subcuentas();
             Susuarios usuario = new Susuarios(txtUser.Text.Trim(), txtPass.Text.Trim());
              //int validacion=negusuario.verificarUseryPass(usuario);
             
             if (negusuario.verificarUseryPass(usuario))
             {
+               String IdUsuario =negusuario.obtenerIdUsuario(usuario);
                 if (Session["usuario"] == null)
                 {
                     Session["usuario"] = usuario;
                 }
+                if (Session["IdUsuario"] == null)
+                {
+                    Session["IdUsuario"] = IdUsuario;
+                }
+
+                ///negusuariosubcuenta.obtenerSubcuentasDeUsuario();
+
                 Response.Redirect("Inicio.aspx");
             }
             /*

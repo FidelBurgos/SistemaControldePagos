@@ -55,6 +55,22 @@ namespace Dao
             /// EL USUARIO NO EXISTE NI COINCIDE 
         }
 
+        public String obtenerIdUsuario(Susuarios usuario)
+        {
+            DataTable tabla = new DataTable();
+            tabla = obtenerTodosLosUsuarios();
+            String idUsuario = "";
+            foreach (DataRow fila in tabla.Rows)
+            {
+                if (usuario.User == fila["usua_user"].ToString() && usuario.Clave == fila["usua_clave"].ToString() && 0 == Int32.Parse(fila["usua_baja"].ToString()))
+                {
+                  
+                    idUsuario = fila["usua_idusuario"].ToString();
+                    
+                }
+            }
+            return idUsuario;
+        }
         public DataTable obtenerTodosLosUsuarios()
         {
             String consulta = "SELECT * FROM susuarios";

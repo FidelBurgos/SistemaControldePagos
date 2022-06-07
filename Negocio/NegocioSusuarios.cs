@@ -16,5 +16,11 @@ namespace Negocio
         {
             return dao_usu.verificarUseryPass(user);
         }
+
+       public String obtenerIdUsuario(Susuarios usuario)
+        {
+            return dao_usu.obtenerIdUsuario(usuario);
+        }
+
     }
 }
