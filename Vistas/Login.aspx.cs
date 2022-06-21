@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
 using Entidades;
+using System.Drawing;
 
 namespace Vistas
 {
@@ -20,7 +21,8 @@ namespace Vistas
         {
             NegocioSusuarios negusuario = new NegocioSusuarios();
             NegocioSusuarios_subcuentas negusuariosubcuenta = new NegocioSusuarios_subcuentas();
-            Susuarios usuario = new Susuarios(txtUser.Text.Trim(), txtPass.Text.Trim());
+            String clave = negusuario.EncriptarClave(txtPass.Text.Trim());
+            Susuarios usuario = new Susuarios(txtUser.Text.Trim(), clave);
              //int validacion=negusuario.verificarUseryPass(usuario);
             
             if (negusuario.verificarUseryPass(usuario))
@@ -38,6 +40,11 @@ namespace Vistas
                 ///negusuariosubcuenta.obtenerSubcuentasDeUsuario();
 
                 Response.Redirect("Inicio.aspx");
+            }
+            else
+            {
+                
+                lblMensaje.Text = "Error al iniciar Sesion.";
             }
             /*
             

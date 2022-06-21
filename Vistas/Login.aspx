@@ -33,9 +33,12 @@
   <div class="form-group">
     <label for="exampleInputPassword1" style="color:white;">Contraseña</label>
     <asp:TextBox runat="server" type="password" class="form-control" id="txtPass"/>
+    <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
   </div>
   
-  <asp:Button runat="server" type="submit" Text="Iniciar Sesión" class="btn" style="background-color:black; color:white; width:100%; margin-top:10px" OnClick="btnIniciarSesion" />
+        
+  
+  <asp:Button runat="server" type="submit" Text="Iniciar Sesión" class="btn" style="background-color:black; color:white; width:100%; margin-top:10px" OnClick="btnIniciarSesion" ID="btnIniSes" />
 
     </div>
      
