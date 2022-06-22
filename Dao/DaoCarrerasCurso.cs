@@ -37,15 +37,21 @@ namespace Dao
                 */
 
                 /// agrega solo con ID de usuario
-                consulta = "SELECT cacu_idcarrcurs, cacu_descripcion FROM carrerascursos INNER JOIN susuarios_subcuentas ON carrerascursos.cacu_idsubcuen = susuarios_subcuentas.ussu_idsubcuenta WHERE ussu_idusuario = '" + idusuario + "'";
+                consulta = "SELECT cacu_idcarrcurs, cacu_descripcion FROM carrerascursos INNER JOIN susuarios_subcuentas ON carrerascursos.cacu_idsubcuen = susuarios_subcuentas.ussu_idsubcuenta WHERE ussu_idusuario = '" + idusuario + "'  AND (cacu_descripcion NOT LIKE '%NO USAR%') ";
+
+
+                if (textoBusqueda != "")
+                {
+                    consulta += $"AND (cacu_descripcion LIKE '%{textoBusqueda}%') ";
+                }
+                consulta += "ORDER BY cacu_descripcion";
+
                 dt = accesoDatos.ObtenerTabla("Carreras", consulta);
-                return dt;
+               // return dt;
             }
             else if (filtrosTipoCarrCurs == "Carrera")
             {
-                consulta = "SELECT cacu_idcarrcurs, cacu_descripcion FROM carrerascursos " +
-                "WHERE (cacu_tipocarrcurs = 'CARRERA') " +
-                "AND cacu_descripcion NOT LIKE '%NO USAR%' ";
+                consulta = "SELECT cacu_idcarrcurs, cacu_descripcion FROM carrerascursos INNER JOIN susuarios_subcuentas ON carrerascursos.cacu_idsubcuen = susuarios_subcuentas.ussu_idsubcuenta WHERE ussu_idusuario = '" + idusuario + "' AND cacu_tipocarrcurs = 'CARRERA' AND (cacu_descripcion NOT LIKE '%NO USAR%') ";
 
                  if (textoBusqueda != "")
                 {
@@ -55,13 +61,13 @@ namespace Dao
                 consulta += "ORDER BY cacu_descripcion";
 
                 dt = accesoDatos.ObtenerTabla("Carreras", consulta);
-                return dt;
+                //return dt;
             }
             else if(filtrosTipoCarrCurs == "Curso")
             {
-                consulta = "SELECT cacu_idcarrcurs, cacu_descripcion FROM carrerascursos " +
-                "WHERE (cacu_tipocarrcurs = 'CURSO') " +
-                "AND cacu_descripcion NOT LIKE '%NO USAR%' ";
+                consulta = "SELECT cacu_idcarrcurs, cacu_descripcion FROM carrerascursos INNER JOIN susuarios_subcuentas ON carrerascursos.cacu_idsubcuen = susuarios_subcuentas.ussu_idsubcuenta WHERE ussu_idusuario = '" + idusuario + "' AND cacu_tipocarrcurs = 'CURSO' AND cacu_descripcion NOT LIKE '%NO USAR%'";
+
+
 
                  if (textoBusqueda != "")
                 {
@@ -71,12 +77,11 @@ namespace Dao
                 consulta += "ORDER BY cacu_descripcion";
 
                 dt = accesoDatos.ObtenerTabla("Carreras", consulta);
-                return dt;
+               // return dt;
             }
             else if (filtrosTipoCarrCurs == "Maestria")
             {
-                consulta = "SELECT cacu_idcarrcurs, cacu_descripcion FROM carrerascursos " +
-                "WHERE (cacu_tipocarrcurs = 'MAESTRIA') " +
+                consulta = "SELECT cacu_idcarrcurs, cacu_descripcion FROM carrerascursos INNER JOIN susuarios_subcuentas ON carrerascursos.cacu_idsubcuen = susuarios_subcuentas.ussu_idsubcuenta WHERE ussu_idusuario = '" + idusuario + "' AND cacu_tipocarrcurs = 'MAESTRIA'" +
                 "AND cacu_descripcion NOT LIKE '%NO USAR%' ";
 
                  if (textoBusqueda != "")
@@ -87,7 +92,7 @@ namespace Dao
                 consulta += "ORDER BY cacu_descripcion";
 
                 dt = accesoDatos.ObtenerTabla("Carreras", consulta);
-                return dt;
+              //  return dt;
             }
             return dt;
         }
