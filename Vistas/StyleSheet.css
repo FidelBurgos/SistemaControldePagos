@@ -1,0 +1,119 @@
+﻿
+body {
+    font-family: Helvetica;
+}
+
+.first {
+    background-color: #000000;
+    height: 50px;
+    color: white;
+}
+
+.encabezado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+    .encabezado h3 {
+        font-family: Helvetica;
+        font-weight: 500;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 40px;
+    }
+
+.second {
+    color: white;
+    background-color: dimgray;
+    padding-top: 10px;
+    display: flex;
+    align-items: baseline;
+}
+
+    .second p {
+        font-family: Helvetica;
+        font-size: 12px;
+    }
+
+::placeholder {
+    font-size: 14px;
+    font-family: Helvetica;
+    padding-left: 5px;
+}
+
+.buscador {
+    display: flex;
+    flex-direction: row;
+}
+
+.buscar {
+    margin-left: 5px;
+}
+
+
+.third {
+    padding-left:2px;
+    font-size:14px;
+    height:40px;
+}
+
+.item{
+    margin-left:8px;
+}
+
+.fourth {
+
+    height: 150px;
+    overflow-y: scroll;
+    background-color:gainsboro;
+    font-size: 11px;
+    
+}
+.chkboxlist td {
+    padding-top: 10px;
+    padding-left: 14px;
+    font-weight:500;
+}
+
+.chkboxlist label{
+    padding-left:10px;
+}
+
+#cblCarrera {
+    border-collapse: collapse;
+}
+#cblCarrera td:nth-child(2n) {
+        padding-left: 5em;
+    }
+
+.sixth {
+    background-color: gainsboro;
+}
+.chkboxlistAnio label {
+    padding-left: 10px;
+}
+.chkboxlistMes td{
+    font-size: 11px;
+    padding-left: 22px;
+}
+.chkboxlistMes label {
+    padding-left: 10px;
+}
+
+.chkboxlistAnio td {
+    padding-left: 22px;
+    font-weight: 500;
+}
+
+.eighth{
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.nineth {
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}

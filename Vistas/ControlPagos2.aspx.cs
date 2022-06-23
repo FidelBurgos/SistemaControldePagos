@@ -10,10 +10,12 @@ using System.IO;
 using System.Drawing;
 using System.Web.UI.HtmlControls;
 using System.Text;
+
 namespace Vistas
 {
-    public partial class ControlPagos : System.Web.UI.Page
+    public partial class ControlPagos2 : System.Web.UI.Page
     {
+
         NegocioCarrerasCurso negocioCarrerasCurso = new NegocioCarrerasCurso();
         List<DataTable> tablasCarrerasCurso = new List<DataTable>();
         DataTable dtPruebas = new DataTable();
@@ -24,12 +26,12 @@ namespace Vistas
             string idusuario = "";
             if (Session["IdUsuario"] != null)
             {
-                idusuario=Session["IdUsuario"].ToString();
+                idusuario = Session["IdUsuario"].ToString();
             }
 
             if (!IsPostBack)
             {
-                negocioCarrerasCurso.cargarDatosCarrerasCBL(idusuario,cblCarrera);
+                negocioCarrerasCurso.cargarDatosCarrerasCBL(idusuario, cblCarrera);
                 negocioCarrerasCurso.cargarDatosMesesCBL(cblMes);
                 negocioCarrerasCurso.cargarDatosAñosCBL(cblAnio);
             }
@@ -41,7 +43,7 @@ namespace Vistas
 
             if (!verificarCBLMarcado(cblCarrera))
             {
-                advertencia = "Debe marcar todos los datos";
+                advertencia = "Por favor, seleccione todos los datos";
                 lblAdvertencia.Text = advertencia;
             }
             else
@@ -74,6 +76,7 @@ namespace Vistas
                         grdBuscado.DataBind();
                         grdBuscado.CssClass = "tablaResultados";
 
+                        btnExportar.Visible = true;
 
                     }
                     else
@@ -100,12 +103,12 @@ namespace Vistas
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
-            
+
         }
 
         protected void btnExportar_Click(object sender, EventArgs e)
         {
-           
+
             HttpResponse response = Response;
             StringWriter sw = new StringWriter();
             HtmlTextWriter htw = new HtmlTextWriter(sw);
@@ -123,7 +126,8 @@ namespace Vistas
                     response.Write(sw.ToString());
                     response.End();
                 }
-                else {
+                else
+                {
                     lblAdvertencia.Text = "Debe haber cursos para generar el excel!";
                 }
             }
@@ -143,7 +147,7 @@ namespace Vistas
             {
                 idusuario = Session["IdUsuario"].ToString();
             }
-            negocioCarrerasCurso.cargarDatosCarrerasCBL(idusuario,cblCarrera, rblistSeleccionCarrCurso.SelectedValue, busqueda);
+            negocioCarrerasCurso.cargarDatosCarrerasCBL(idusuario, cblCarrera, rblistSeleccionCarrCurso.SelectedValue, busqueda);
         }
 
         protected void tbxBusquedaTexto_TextChanged(object sender, EventArgs e)
@@ -154,13 +158,13 @@ namespace Vistas
             {
                 idusuario = Session["IdUsuario"].ToString();
             }
-            negocioCarrerasCurso.cargarDatosCarrerasCBL(idusuario,cblCarrera, rblistSeleccionCarrCurso.SelectedValue, busqueda);
+            negocioCarrerasCurso.cargarDatosCarrerasCBL(idusuario, cblCarrera, rblistSeleccionCarrCurso.SelectedValue, busqueda);
         }
 
         protected bool verificarCBLMarcado(CheckBoxList cbl)
         {
 
-            foreach(ListItem li in cbl.Items)
+            foreach (ListItem li in cbl.Items)
             {
                 if (li.Selected) return true;
             }
@@ -168,10 +172,11 @@ namespace Vistas
             return false;
         }
 
-        public override void VerifyRenderingInServerForm(Control control)
-        {
-           
-        }
+        //public override void VerifyRenderingInServerForm(Control control)
+        //{
+
+        //}
+
 
     }
 }

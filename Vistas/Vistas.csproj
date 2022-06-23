@@ -96,9 +96,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ControlPagos.aspx" />
+    <Content Include="ControlPagos2.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="StyleSheet1.css" />
+    <Content Include="StyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +110,13 @@
     </Compile>
     <Compile Include="ControlPagos.aspx.designer.cs">
       <DependentUpon>ControlPagos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPagos2.aspx.cs">
+      <DependentUpon>ControlPagos2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPagos2.aspx.designer.cs">
+      <DependentUpon>ControlPagos2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
