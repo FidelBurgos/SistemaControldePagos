@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./StyleSheet.css" />
+    <link rel="stylesheet" href="./StyleSheet2.css" />
 
 </head>
 <body>
@@ -15,9 +15,14 @@
         <div class="container-fluid">
             <div class="row first">
                 <div class="col">
-                    <div class="encabezado">
-                        <a href="Inicio.aspx">
+                    <a href="Inicio.aspx">
                             <img src="https://i.ibb.co/5KqDHdN/atras.png" alt="atras" border="0" width="10px" /></a>
+                    <img src="https://www.frgp.utn.edu.ar/public/frontend/assets/img/logo-utn.png" alt="atras" border="0" width="200px" style="margin-left:20px;" />
+
+                </div>
+                <div class="col">
+                    <div class="encabezado">
+                        
                         <h3>CONTROL DE PAGOS</h3>
                     </div>
                 </div>
@@ -36,14 +41,14 @@
 
             <div class="row third">
                 <div class="col">
-                  
-                        <asp:RadioButtonList ID="rblistSeleccionCarrCurso" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" CellPadding="9" OnSelectedIndexChanged="rblistSeleccionCarrCurso_SelectedIndexChanged">
-                            <asp:ListItem Selected="True" Value="Todo">&nbsp; Todo</asp:ListItem>
-                            <asp:ListItem Value="Carrera">&nbsp; Carreras</asp:ListItem>
-                            <asp:ListItem Value="Curso">&nbsp; Cursos</asp:ListItem>
-                            <asp:ListItem Value="Maestria">&nbsp; Maestrías</asp:ListItem>
-                        </asp:RadioButtonList>
-               
+
+                    <asp:RadioButtonList ID="rblistSeleccionCarrCurso" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" CellPadding="9" OnSelectedIndexChanged="rblistSeleccionCarrCurso_SelectedIndexChanged">
+                        <asp:ListItem Selected="True" Value="Todo">&nbsp; Todo</asp:ListItem>
+                        <asp:ListItem Value="Carrera">&nbsp; Carreras</asp:ListItem>
+                        <asp:ListItem Value="Curso">&nbsp; Cursos</asp:ListItem>
+                        <asp:ListItem Value="Maestria">&nbsp; Maestrías</asp:ListItem>
+                    </asp:RadioButtonList>
+
                 </div>
             </div>
 
@@ -68,35 +73,35 @@
                 <asp:CheckBoxList ID="cblMes" runat="server" CssClass="chkboxlistMes" RepeatDirection="Horizontal" CellPadding="5"></asp:CheckBoxList>
             </div>
 
-             <div class="row second">
+            <div class="row second">
                 <div class="col">
                     <p>SELECCIONE TIPOS DE PAGO  </p>
                 </div>
 
             </div>
-            <div style="background-color:gainsboro; " class="row third">
+            <div style="background-color: gainsboro;" class="row third">
 
-            <asp:RadioButtonList ID="rblTipoPago" runat="server" CssClass="chkboxlist" RepeatDirection="Horizontal">
-                <asp:ListItem Selected="True">CUOTAS</asp:ListItem>
+                <asp:RadioButtonList ID="rblTipoPago" runat="server" CssClass="chkboxlist" RepeatDirection="Horizontal">
+                    <asp:ListItem Selected="True">CUOTAS</asp:ListItem>
 
-                <asp:ListItem>MATRICULAS</asp:ListItem>
-                <asp:ListItem>AMBAS</asp:ListItem>
-            </asp:RadioButtonList>           
+                    <asp:ListItem>MATRICULAS</asp:ListItem>
+                    <asp:ListItem>AMBAS</asp:ListItem>
+                </asp:RadioButtonList>
 
             </div>
             <div class="row eighth">
-                 <asp:Button ID="btnBuscar" runat="server" class="btn btn-primary" Text="BUSCAR" OnClick="btnBuscar_Click" />
-                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lblAdvertencia" style="color:red;" runat="server" Text=""></asp:Label>
+                <asp:Button ID="btnBuscar" runat="server" class="btn btn-primary" Text="BUSCAR" OnClick="btnBuscar_Click" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="lblAdvertencia" Style="color: red;" runat="server" Text=""></asp:Label>
             </div>
             <div class="row nineth">
-                 <div runat="server" ID="resultadosConsultas">
-            <br />
-            <asp:Label ID="Label4" runat="server" Text="Informacion filtrada:" Visible="False"></asp:Label>
-            <asp:Button ID="btnExportar"  class="btn btn-warning" runat="server" Text="Descargar" Visible="false" OnClick="btnExportar_Click" />
-            <br />
-            <asp:GridView ID="grdBuscado" runat="server" CellPadding="5" CellSpacing="10"></asp:GridView>
-        </div>
+                <div runat="server" id="resultadosConsultas">
+                    <br />
+                    <asp:Label ID="Label4" runat="server" Text="Informacion filtrada:" Visible="False"></asp:Label>
+                    <asp:Button ID="btnExportar" class="btn btn-warning" runat="server" Text="Descargar" Visible="false" OnClick="btnExportar_Click" />
+                    <br />
+                    <asp:GridView ID="grdBuscado" runat="server" CellPadding="5" CellSpacing="10"></asp:GridView>
+                </div>
             </div>
 
 
