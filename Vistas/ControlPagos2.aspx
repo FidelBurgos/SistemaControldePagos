@@ -77,10 +77,10 @@
             <div style="background-color:gainsboro; " class="row third">
 
             <asp:RadioButtonList ID="rblTipoPago" runat="server" CssClass="chkboxlist" RepeatDirection="Horizontal">
-                <asp:ListItem Selected="True">Cuotas</asp:ListItem>
+                <asp:ListItem Selected="True">CUOTAS</asp:ListItem>
 
-                <asp:ListItem>Matriculas</asp:ListItem>
-                <asp:ListItem>Ambas</asp:ListItem>
+                <asp:ListItem>MATRICULAS</asp:ListItem>
+                <asp:ListItem>AMBAS</asp:ListItem>
             </asp:RadioButtonList>           
 
             </div>
