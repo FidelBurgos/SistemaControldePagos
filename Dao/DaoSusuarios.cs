@@ -17,19 +17,27 @@ namespace Dao
 
         public DaoSusuarios(){; }
 
-        public Boolean verificarUseryPass(Susuarios usuario)
+        public Susuarios verificarUseryPass(Susuarios usuario)
         {
             DataTable tabla = new DataTable();
-            tabla = obtenerTodosLosUsuarios();
-            foreach(DataRow fila in tabla.Rows)
+            
+
+            String consulta = "select * from susuarios where usua_user like '"+usuario.User+"' and usua_clave like '"+usuario.Clave+"' and usua_baja like '0'";
+            tabla = obtenerUsuario(consulta);
+
+            foreach (DataRow fila in tabla.Rows)
             {
 
                 
-                if (usuario.User == fila["usua_user"].ToString() && usuario.Clave == fila["usua_clave"].ToString() && 0== Int32.Parse(fila["usua_baja"].ToString()))
-                {
-                    return true;
-                }
                 
+
+                usuario.Idusuario = fila["usua_idusuario"].ToString();
+                usuario.Apellido = fila["usua_apellido"].ToString();
+                usuario.Nombre = fila["usua_nombre"].ToString();
+                usuario.Baja = fila["usua_baja"].ToString();
+
+                return usuario;
+
                 /*
                 /// EL USUARIO EXISTE Y ESTA DE ALTA
 
@@ -51,7 +59,9 @@ namespace Dao
                 else { return 5; }
                 */
             }
-            return false;
+
+            usuario = null;
+            return usuario;
             /// EL USUARIO NO EXISTE NI COINCIDE 
         }
 
@@ -71,12 +81,17 @@ namespace Dao
             }
             return idUsuario;
         }
+
         public DataTable obtenerTodosLosUsuarios()
         {
             String consulta = "SELECT * FROM susuarios";
             return accesoDatos.ObtenerTabla("susuarios", consulta);
         }
 
+        public DataTable obtenerUsuario(string consulta) {
+           
+            return accesoDatos.ObtenerTabla("susuarios", consulta);
+        }
         /*
         public Boolean verificarUseryPassBaja(Susuarios usuario)
         {

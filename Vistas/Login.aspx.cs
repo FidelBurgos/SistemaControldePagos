@@ -23,19 +23,17 @@ namespace Vistas
             NegocioSusuarios_subcuentas negusuariosubcuenta = new NegocioSusuarios_subcuentas();
             String clave = negusuario.EncriptarClave(txtPass.Text.Trim());
             Susuarios usuario = new Susuarios(txtUser.Text.Trim(), clave);
-             //int validacion=negusuario.verificarUseryPass(usuario);
-            
-            if (negusuario.verificarUseryPass(usuario))
+            //int validacion=negusuario.verificarUseryPass(usuario);
+
+            Susuarios usu = negusuario.verificarUseryPass(usuario);
+            if (usu != null)
             {
                String IdUsuario =negusuario.obtenerIdUsuario(usuario);
                 if (Session["usuario"] == null)
                 {
-                    Session["usuario"] = usuario;
+                    Session["usuario"] = usu;
                 }
-                if (Session["IdUsuario"] == null)
-                {
-                    Session["IdUsuario"] = IdUsuario;
-                }
+               
 
                 ///negusuariosubcuenta.obtenerSubcuentasDeUsuario();
 

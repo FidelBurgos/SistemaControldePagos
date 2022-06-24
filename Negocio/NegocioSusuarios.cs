@@ -14,7 +14,7 @@ namespace Negocio
     {
 
         DaoSusuarios dao_usu = new DaoSusuarios();
-        public Boolean verificarUseryPass(Susuarios user)
+        public Susuarios verificarUseryPass(Susuarios user)
         {
             return dao_usu.verificarUseryPass(user);
         }
