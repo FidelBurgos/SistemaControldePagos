@@ -33,7 +33,11 @@ namespace Vistas
                 {
                     Session["usuario"] = usu;
                 }
-               
+
+                if (Session["IdUsuario"] == null)
+                {
+                    Session["IdUsuario"] = IdUsuario;
+                }
 
                 ///negusuariosubcuenta.obtenerSubcuentasDeUsuario();
 
