@@ -105,6 +105,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblAdvertencia;
 
         /// <summary>
+        /// Control grdBuscado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdBuscado;
+
+        /// <summary>
         /// Control resultadosConsultas.
         /// </summary>
         /// <remarks>
@@ -130,14 +139,5 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnExportar;
-
-        /// <summary>
-        /// Control grdBuscado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdBuscado;
     }
 }

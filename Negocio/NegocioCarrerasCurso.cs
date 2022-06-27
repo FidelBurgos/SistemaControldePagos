@@ -196,31 +196,31 @@ namespace Negocio
         private void agregarCuotasTablaDeControl(DataTable controlDePagos, DataTable tablaCuotas)
         {
 
-            controlDePagos.Columns.Add("Cuotas - Pago");
-            controlDePagos.Columns.Add("Cuotas - Impago");
-            controlDePagos.Columns.Add("Cuotas - Parcial");
+            controlDePagos.Columns.Add("Cuotas pagas");
+            controlDePagos.Columns.Add("Cuotas impagas");
+            controlDePagos.Columns.Add("Cuotas parciales");
 
             foreach (DataRow row in controlDePagos.Rows)
             {
 
 
-                row["Cuotas - Pago"] = tablaCuotas.Rows[0]["pago_cuotas"];
-                row["Cuotas - Impago"] = tablaCuotas.Rows[0]["impago_cuotas"];
-                row["Cuotas - Parcial"] = tablaCuotas.Rows[0]["parcial_cuotas"];
+                row["Cuotas pagas"] = tablaCuotas.Rows[0]["pago_cuotas"];
+                row["Cuotas impagas"] = tablaCuotas.Rows[0]["impago_cuotas"];
+                row["Cuotas parciales"] = tablaCuotas.Rows[0]["parcial_cuotas"];
             }
         }
 
         private void agregarMatriculasTablaDeControl(DataTable controlDePagos, DataTable tablaMatriculas)
         {
-            controlDePagos.Columns.Add("Matriculas - Pago");
-            controlDePagos.Columns.Add("Matriculas - Impago");
-            controlDePagos.Columns.Add("Matriculas - Parcial");
+            controlDePagos.Columns.Add("Matriculas pagas");
+            controlDePagos.Columns.Add("Matriculas impagas");
+            controlDePagos.Columns.Add("Matriculas parciales");
 
             foreach (DataRow row in controlDePagos.Rows)
             {
-                row["Matriculas - Pago"] = tablaMatriculas.Rows[0]["pago_matriculas"];
-                row["Matriculas - Impago"] = tablaMatriculas.Rows[0]["impago_matriculas"];
-                row["Matriculas - Parcial"] = tablaMatriculas.Rows[0]["parcial_matriculas"];
+                row["Matriculas pagas"] = tablaMatriculas.Rows[0]["pago_matriculas"];
+                row["Matriculas impagas"] = tablaMatriculas.Rows[0]["impago_matriculas"];
+                row["Matriculas parciales"] = tablaMatriculas.Rows[0]["parcial_matriculas"];
             }
         }
 
@@ -244,8 +244,8 @@ namespace Negocio
                                 if (resultado != null)
                                 {
                                     //!! 
-                                    resultado.Columns.Add("ANIO");
-                                    resultado.Columns.Add("MES");
+                                    resultado.Columns.Add("Año");
+                                    resultado.Columns.Add("Mes");
 
                                     foreach (DataRow drs in resultado.Rows) // Por cada row en la datatable que me devolvieron
                                     {
@@ -253,7 +253,7 @@ namespace Negocio
                                         if (drs[0].ToString() != null) // si la columna no ta vacia
                                         {
                                             drs[2] = año.ToString(); //Anio pedido
-                                            drs[3] = "TODOS"; // y meses seleccionados
+                                            drs[3] = "Todos"; // y meses seleccionados
                                         }
                                      
                                     }
@@ -292,8 +292,8 @@ namespace Negocio
 
                             if(resultado != null) 
                                 { 
-                                    resultado.Columns.Add("ANIO");
-                                    resultado.Columns.Add("MES");
+                                    resultado.Columns.Add("Año");
+                                    resultado.Columns.Add("Mes");
                                     foreach (DataRow drs in resultado.Rows) // Por cada row en la datatable que me devolvieron
                                     {
 

@@ -100,7 +100,7 @@
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="StyleSheet1.css" />
-    <Content Include="StyleSheet2.css" />
+    <Content Include="StyleSheet3.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

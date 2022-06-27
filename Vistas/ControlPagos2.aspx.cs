@@ -121,9 +121,67 @@ namespace Vistas
                 {
                     response.Clear();
                     response.AddHeader("Content-Disposition", "attachment; filename= ControlPagos" + ".xls");
-                    response.ContentType = "application/vnd.ms";
+                    response.ContentType = "application/vnd.xls";
+                    
+
+                    grdBuscado.HeaderRow.BackColor = Color.White;
+
+                    foreach (TableCell cell in grdBuscado.HeaderRow.Cells)
+
+                    {
+
+                        cell.CssClass = "bhead";
+
+                    }
+
+                    foreach (GridViewRow row in grdBuscado.Rows)
+
+                    {
+
+                        row.BackColor = Color.White;
+
+                        foreach (TableCell cell in row.Cells)
+
+                        {
+
+                            if (row.RowIndex % 2 == 0)
+
+                            {
+
+                                cell.CssClass = "bbody";
+
+                            }
+
+                            else
+
+                            {
+
+                                cell.BackColor = grdBuscado.RowStyle.BackColor;
+
+                            }
+
+                        }
+                    }
+
                     grdBuscado.RenderControl(htw);
-                    response.Write(sw.ToString());
+                    string style = @"<style> .bhead { 
+                         
+                      background: #0366b0;
+                        color: white;
+                        padding: 10px 25px 10px 5px;
+                        text-align: left;
+                        font-size: 14px;
+                        }
+                        .bbody {
+                            padding: 5px 5px;
+                            font-size: 14px;
+                        }                    
+
+
+                    } </style>";
+
+                    response.Write(style);
+                    response.Output.Write(sw.ToString());
                     response.End();
                 }
                 else
@@ -172,10 +230,10 @@ namespace Vistas
             return false;
         }
 
-        //public override void VerifyRenderingInServerForm(Control control)
-        //{
+        public override void VerifyRenderingInServerForm(Control control)
+        {
 
-        //}
+        }
 
 
     }

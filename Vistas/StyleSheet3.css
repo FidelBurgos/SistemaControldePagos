@@ -1,5 +1,4 @@
-﻿
-body {
+﻿body {
     font-family: Helvetica;
 }
 
@@ -11,7 +10,7 @@ body {
 
 
 .encabezado {
-    margin-left:330px;
+    margin-left: 330px;
     margin-top: 15px;
 }
 
@@ -117,7 +116,47 @@ body {
 }
 
 .nineth {
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: -20px;
+    margin-left:0px;
     padding: 10px;
+
 }
+
+
+.ten {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    padding: 10px;
+    background-color: gainsboro;
+}
+
+.tablaResultados th {
+    width: 100%;
+    background: #0366b0;
+    color: white;
+    padding: 10px 25px 10px 5px;
+    text-transform: capitalize;
+    text-align: left;
+    font-size: 14px;
+    font-family: Helvetica;
+}
+
+
+.tablaResultados td {
+    padding: 5px 5px;
+    font-size: 14px;
+    font-family: Helvetica;
+}
+
+.tablaResultados tr, td {
+    border: 1px inset transparent;
+}
+
+    .tablaResultados tr:not(:first-child) {
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+        .tablaResultados tr:not(:first-child):hover {
+            background: #d4d4d4;
+        }

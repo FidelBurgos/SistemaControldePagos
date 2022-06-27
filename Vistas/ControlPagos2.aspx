@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./StyleSheet2.css" />
+    <link rel="stylesheet" href="./StyleSheet3.css" />
 
 </head>
 <body>
@@ -94,16 +94,17 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="lblAdvertencia" Style="color: red;" runat="server" Text=""></asp:Label>
             </div>
+            <div class="row ten">
+                    <asp:GridView ID="grdBuscado" runat="server" CellPadding="5" CellSpacing="10"></asp:GridView>
+            </div>
             <div class="row nineth">
                 <div runat="server" id="resultadosConsultas">
                     <br />
                     <asp:Label ID="Label4" runat="server" Text="Informacion filtrada:" Visible="False"></asp:Label>
-                    <asp:Button ID="btnExportar" class="btn btn-warning" runat="server" Text="Descargar" Visible="false" OnClick="btnExportar_Click" />
+                    <asp:Button ID="btnExportar" class="btn btn-success btn-sm"   runat="server" Text="Exportar" Visible="false" OnClick="btnExportar_Click" />
                     <br />
-                    <asp:GridView ID="grdBuscado" runat="server" CellPadding="5" CellSpacing="10"></asp:GridView>
                 </div>
             </div>
-
 
         </div>
     </form>
