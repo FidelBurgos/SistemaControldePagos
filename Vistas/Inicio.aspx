@@ -30,7 +30,7 @@
         <br />
 
         <div>
-            <a href="ControlPagos.aspx">Control Pagos</a>
+            <a href="ControlPagos2.aspx">Control Pagos</a>
         </div>
     </form>
 </body>
